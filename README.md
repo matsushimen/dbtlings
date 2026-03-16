@@ -1,6 +1,6 @@
 ## dbtlings
 
-rustlings にインスパイアされた、**dbt Core + DuckDB** をハンズオン形式で学べる教材です。  
+**dbt Core + DuckDB** をハンズオン形式で学べる教材です。  
 SQL の基礎（SELECT / JOIN / GROUP BY など）は理解していて、dbt をこれから使い始めたい・ベストプラクティスを身につけたい方向けです。
 
 
