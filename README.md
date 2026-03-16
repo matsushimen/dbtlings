@@ -54,3 +54,7 @@ uv python install 3.12
 
 - [dbt Documentation](https://docs.getdbt.com/docs/introduction)
 - [dbt-duckdb Documentation](https://github.com/jwills/dbt-duckdb)
+
+### ライセンス
+
+MIT License（詳細は `LICENSE` を参照）
