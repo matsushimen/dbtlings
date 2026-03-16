@@ -1,0 +1,30 @@
+version: 2
+
+sources:
+  - name: raw
+    # DuckDB では `main` は「スキーマ」であり「カタログ(database)」ではありません。
+    # `database: main` を指定すると `main.main.payments` のような参照になり、
+    # 「Catalog "main" does not exist」で落ちるため、database は指定しません。
+    schema: main
+    tables:
+      - name: payments
+        # TODO: payments テーブルに対して、order_id の relationship テストを記述してください。
+        # orders テーブル (seed) の order_id を参照するようにします。
+        columns:
+          - name: order_id
+            tests:
+              - relationships:
+                  arguments:
+                    to: ref('orders')
+                    field: order_id
+
+models:
+  - name: fct_revenue
+    columns:
+      - name: order_id
+        tests:
+          - unique
+          - not_null
+      - name: total_amount
+        tests:
+          - not_null

@@ -1,0 +1,29 @@
+# Python / uv
+.venv/
+__pycache__/
+*.py[cod]
+*.pyo
+.python-version.bak
+*.egg-info/
+build/
+dist/
+
+# エディタ/OS
+.DS_Store
+.idea/
+.vscode/
+
+# dbt（生成物）
+**/target/
+**/dbt_packages/
+**/logs/
+.user.yml
+
+# dbt profiles（各演習でローカルにコピーして使う想定）
+**/profiles.yml
+
+# DuckDB（ローカル完結用のDBファイル）
+*.duckdb
+*.duckdb.wal
+*.duckdb.tmp
+

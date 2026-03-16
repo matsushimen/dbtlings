@@ -1,0 +1,23 @@
+version: 2
+
+models:
+  - name: stg_events
+    description: "アプリ内でのユーザー行動ログを管理するステージングモデルです。"
+    columns:
+      - name: event_id
+        description: "イベントのユニークID"
+        tests:
+          - unique
+          - not_null
+      
+      - name: user_id
+        description: "行動したユーザーのID"
+        # TODO: not_null テストを追加してください
+
+      - name: event_type
+        description: "イベントの種類（page_view, add_to_cart, checkout など）"
+        # TODO: accepted_values テストを追加してください
+
+      - name: event_timestamp
+        # TODO: description を記述してください
+        description: "TODO: ここに説明を書いてください"

@@ -1,0 +1,6 @@
+dbtlings:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: dbtlings.duckdb

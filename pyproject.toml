@@ -1,0 +1,13 @@
+[project]
+name = "dbtlings"
+version = "0.1.0"
+description = "dbt interactive course inspired by rustlings"
+requires-python = ">=3.10,<3.14"
+dependencies = [
+    "dbt-core",
+    "dbt-duckdb",
+]
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"

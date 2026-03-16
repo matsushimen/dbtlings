@@ -1,0 +1,14 @@
+name: 'dbtlings_02'
+version: '1.0.0'
+config-version: 2
+
+profile: 'dbtlings'
+
+model-paths: ["models"]
+seed-paths: ["data"]
+test-paths: ["tests"]
+target-path: "target"
+
+models:
+  dbtlings_02:
+    materialized: table
