@@ -1,8 +1,8 @@
 -- TODO: stg_orders (Exercise 01のモデルを想定したダミー) と src_payments を結合して、注文ごとの売上を集計してください。
 
 with orders as (
-    -- 本来は ref('stg_orders') ですが、この演習パッケージ単体で動かすために
-    -- 簡易的に seeds の orders を直接参照します（実際の実務では ref を使います）。
+    -- この演習ディレクトリ単体で完結させるため、seeds の orders を直接参照します。
+    -- （Exercise 01 のモデルに依存しない構成にしています）
     select * from {{ ref('orders') }}
 ),
 
@@ -14,10 +14,11 @@ final as (
     select
         orders.order_id,
         orders.status,
-        -- 支払いが存在しない注文は NULL ではなく 0 として扱う（not_null テストを満たす）
-        coalesce(sum(payments.amount), 0) as total_amount
+        -- TODO: 支払いが存在しない注文でも NULL にならないようにしてください（not_null テストに落ちます）
+        sum(payments.amount) as total_amount
     from orders
-    left join payments on orders.order_id = payments.order_id -- TODO: JOIN 条件を記述してください
+    -- TODO: JOIN 条件を正しく記述してください（このままだと expected と一致しません）
+    left join payments on 1 = 1
     group by 1, 2
 )
 

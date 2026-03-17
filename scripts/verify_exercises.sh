@@ -30,18 +30,14 @@ for ex in "${exercises[@]}"; do
     uv run dbt seed --profiles-dir .
     uv run dbt run --profiles-dir .
 
-    # Exercise 04 は rustlings 風に「テストが落ちる状態」が初期状態（TODO 未完了）なので、
-    # ここでは失敗を許容して先に進める。
-    if [[ "${ex}" == "exercises/04_macros_and_jinja" ]]; then
-      set +e
-      uv run dbt test --profiles-dir .
-      status=$?
-      set -e
-      if [[ $status -ne 0 ]]; then
-        echo "INFO: ${ex} は TODO 未完了のためテスト失敗が想定内です（学習者が埋めると Green になります）"
-      fi
-    else
-      uv run dbt test --profiles-dir .
+    # dbtlings は rustlings 風の教材なので、初期状態はテストが落ちる演習があります。
+    # ここでは「実行できること（seed/run）」を重視し、test の失敗は許容して先に進めます。
+    set +e
+    uv run dbt test --profiles-dir .
+    status=$?
+    set -e
+    if [[ $status -ne 0 ]]; then
+      echo "INFO: ${ex} は TODO 未完了のためテスト失敗が想定内です（学習者が埋めると Green になります）"
     fi
   )
 done

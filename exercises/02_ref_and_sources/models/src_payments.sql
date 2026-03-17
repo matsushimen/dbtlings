@@ -6,4 +6,4 @@ select
     order_id,
     payment_method,
     amount
-from {{ source('raw', 'payments') }} -- ここを修正してください
+from {{ ref('payments') }} -- TODO: ここを source('raw', 'payments') に修正してください

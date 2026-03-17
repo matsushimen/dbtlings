@@ -14,7 +14,7 @@
 
 1. **Seed の実行**
    ```bash
-   uv run dbt seed
+   uv run dbt seed --profiles-dir .
    ```
    ※ 今回は `payments.csv` と Exercise 01 と同様の `orders.csv` を使用します。
    ※ `dbt-duckdb` では、seed でロードされたテーブルを `source` として定義することも可能です（この演習ではその構成を取っています）。
@@ -36,8 +36,8 @@
 
 5. **実行と検証**
    ```bash
-   uv run dbt run
-   uv run dbt test
+   uv run dbt run --profiles-dir .
+   uv run dbt test --profiles-dir .
    ```
    すべてのテストが Green になればクリアです！
 

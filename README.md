@@ -1,7 +1,7 @@
 ## dbtlings
 
 **dbt Core + DuckDB** をハンズオン形式で学べる教材です。  
-SQL の基礎（SELECT / JOIN / GROUP BY など）は理解していて、dbt をこれから使い始めたい・ベストプラクティスを身につけたい方向けです。
+SQL の基礎（SELECT / JOIN / GROUP BY など）は理解していて、dbt の主要機能を手を動かしながら学びたい方向けです。
 
 
 ### 前提条件

@@ -13,10 +13,11 @@ final as (
         customers.customer_id,
         customers.first_name,
         customers.last_name,
-        count(stg_orders.order_id) as number_of_orders
+        -- TODO: 顧客ごとの注文数を集計してください（例: count(stg_orders.order_id)）
+        null as number_of_orders
     from customers
     left join stg_orders on customers.customer_id = stg_orders.customer_id
-    group by 1, 2, 3
+    group by customers.customer_id, customers.first_name, customers.last_name
 )
 
 select * from final

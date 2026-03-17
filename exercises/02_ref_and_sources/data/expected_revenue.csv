@@ -1,0 +1,6 @@
+order_id,status,total_amount
+1,completed,100
+2,completed,100
+3,pending,0
+4,completed,200
+5,returned,150

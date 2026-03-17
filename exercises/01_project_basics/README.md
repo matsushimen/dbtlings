@@ -19,12 +19,12 @@ dbt プロジェクトの基本構造を理解し、`dbt run` と `dbt test` を
 2. **データのロード（Seeds）**
    今回の演習では CSV データをテーブルとしてロードするために seed を使用します。
    ```bash
-   uv run dbt seed
+   uv run dbt seed --profiles-dir .
    ```
 
 3. **環境チェック**
    ```bash
-   uv run dbt debug
+   uv run dbt debug --profiles-dir .
    ```
 
 4. **モデルの修正**
@@ -38,8 +38,8 @@ dbt プロジェクトの基本構造を理解し、`dbt run` と `dbt test` を
 
 6. **実行と検証**
    ```bash
-   uv run dbt run
-   uv run dbt test
+   uv run dbt run --profiles-dir .
+   uv run dbt test --profiles-dir .
    ```
    すべてのテストが Green になればクリアです！
 
