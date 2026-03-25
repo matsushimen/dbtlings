@@ -10,11 +10,19 @@ dbt プロジェクトの基本構造を理解し、`dbt run` と `dbt test` を
 - 基本的なデータクリーニングと集計
 - スキーマテスト（`unique`, `not_null`, `accepted_values`）
 
+## この演習で編集するファイル
+- `models/stg_orders.sql`
+- `models/dim_customers.sql`
+
+> `models/schema.yml` はこの演習では編集しません（テスト定義は用意済みです）。
+
 ## 手順
 
 1. **Profile の設定**
-   `profiles.yml.example` の内容を参考に、`~/.dbt/profiles.yml` を作成するか、既存のファイルに追記してください。
-   ※ この演習ディレクトリに `profiles.yml` を置いても動作しますが、通常は `~/.dbt/` に置きます。
+   `profiles.yml.example` を `profiles.yml` にコピーし、このディレクトリの設定を使って実行します。
+   ```bash
+   cp -n profiles.yml.example profiles.yml
+   ```
 
 2. **データのロード（Seeds）**
    今回の演習では CSV データをテーブルとしてロードするために seed を使用します。
@@ -32,11 +40,7 @@ dbt プロジェクトの基本構造を理解し、`dbt run` と `dbt test` を
    - `models/stg_orders.sql`
    - `models/dim_customers.sql`
 
-5. **テストの追加**
-   以下のファイルの `TODO` 部分にテストを追記してください。
-   - `tests/schema.yml`
-
-6. **実行と検証**
+5. **実行と検証**
    ```bash
    uv run dbt run --profiles-dir .
    uv run dbt test --profiles-dir .

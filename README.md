@@ -32,7 +32,7 @@ uv python install 3.12
 4. `uv run dbt run --profiles-dir .` → `uv run dbt test --profiles-dir .` を実行します。
 5. モデル（`.sql`）や設定（`.yml`）内の `-- TODO:` / `TODO` を埋めて再実行します。
 
-> 補足: 各演習には `profiles.yml.example` が同梱されています。`profiles.yml.example` を `profiles.yml` にコピーしてから `--profiles-dir .` を付けて実行すると、`~/.dbt` を汚さずローカルで完結します。
+> 補足: 各演習には `profiles.yml.example` が同梱されています。`profiles.yml.example` を `profiles.yml` にコピーしてから `--profiles-dir .` を付けて実行してください。
 
 ### 利用者向け: 演習一覧
 
@@ -40,6 +40,10 @@ uv python install 3.12
 - **Exercise 02: Ref & Sources**: `source()` / `ref()` / `relationships` テスト
 - **Exercise 03: Tests & Docs**: `description` / `accepted_values` / `dbt docs`
 - **Exercise 04: Macros & Jinja**: Macro と Jinja で DRY（初期状態は rustlings 風にテストが落ちる想定）
+- **Exercise 05: Incremental Models**: `incremental` / `is_incremental()`
+- **Exercise 06: Snapshots (SCD2)**: `snapshots/` / `dbt snapshot`
+- **Exercise 07: Packages & dbt-utils**: `packages.yml` / `dbt deps` / `dbt_utils`
+- **Exercise 08: Custom Generic Tests**: 自作 `{% test %}`（generic test）
 
 ### 開発者向け: 回帰チェック（開発用）
 
@@ -48,7 +52,7 @@ uv python install 3.12
 ```
 
 このスクリプトは **教材の利用者向けではなく、開発者が変更の影響を素早く確認するための回帰チェック**です。  
-01〜04 を順に `seed/run/test` します（Exercise 04 のテスト失敗は初期状態では想定内として扱います）。
+01〜08 を順に `seed/run/test` します（TODO 未完了の演習は失敗が想定内として扱います）。
 
 ### リンク
 

@@ -16,3 +16,4 @@ models:
       - name: total_after_tax_usd
         tests:
           - not_null
+

@@ -17,7 +17,6 @@ final as (
         null as number_of_orders
     from customers
     left join stg_orders on customers.customer_id = stg_orders.customer_id
-    group by customers.customer_id, customers.first_name, customers.last_name
 )
 
 select * from final

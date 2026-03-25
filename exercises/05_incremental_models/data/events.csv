@@ -1,0 +1,5 @@
+event_id,user_id,event_type,event_timestamp
+1,101,page_view,2026-03-01 10:00:00
+2,101,add_to_cart,2026-03-01 10:02:00
+3,102,page_view,2026-03-01 11:00:00
+4,103,checkout,2026-03-02 09:00:00

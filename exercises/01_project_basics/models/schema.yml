@@ -11,7 +11,7 @@ models:
         tests:
           - accepted_values:
               arguments:
-                values: ['completed', 'pending'] # TODO: 'returned' は stg で除外されるはず
+                values: ['completed', 'pending'] # この制約を満たすように stg 側を調整します
 
   - name: dim_customers
     columns:
@@ -19,4 +19,7 @@ models:
         tests:
           - unique
           - not_null
-      # TODO: number_of_orders に対するテストを追加してください（例: not_null）
+      - name: number_of_orders
+        tests:
+          - not_null
+

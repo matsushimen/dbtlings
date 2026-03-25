@@ -2,7 +2,7 @@
 -- また、status が 'returned' 以外のレコードのみを抽出するように filter を追加してください。
 
 with orders as (
-    -- TODO: ここを {{ ref('src_orders') }} に修正してください（いまは seed を直接参照している状態）
+    -- TODO: `src_orders` を参照するように修正してください
     select * from {{ ref('orders') }}
 )
 

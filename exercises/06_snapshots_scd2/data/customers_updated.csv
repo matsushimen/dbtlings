@@ -1,0 +1,4 @@
+customer_id,customer_name,member_tier
+1,Alice,silver
+2,Bob,silver
+3,Carol,gold

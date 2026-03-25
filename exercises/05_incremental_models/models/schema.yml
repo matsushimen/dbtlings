@@ -1,0 +1,13 @@
+version: 2
+
+models:
+  - name: fct_events_incremental
+    columns:
+      - name: event_id
+        tests:
+          - unique
+          - not_null
+      - name: event_timestamp
+        tests:
+          - not_null
+

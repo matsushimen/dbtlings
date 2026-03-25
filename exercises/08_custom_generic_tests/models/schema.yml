@@ -1,0 +1,20 @@
+version: 2
+
+models:
+  - name: stg_subscriptions
+    columns:
+      - name: subscription_id
+        tests:
+          - unique
+          - not_null
+      - name: start_date
+        tests:
+          - not_null
+      - name: end_date
+        tests:
+          # TODO: 自作テスト `end_date_not_before_start_date` を適用してください
+          # （start_date と end_date を引数として渡します）
+          - end_date_not_before_start_date:
+              start_date_column: start_date
+              end_date_column: end_date
+

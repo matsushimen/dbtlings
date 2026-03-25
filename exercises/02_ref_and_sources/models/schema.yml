@@ -1,0 +1,27 @@
+version: 2
+
+sources:
+  - name: raw
+    schema: main
+    tables:
+      - name: payments
+        # TODO: `payments.order_id` が `orders.order_id` に存在することを確認する
+        # relationship テストを追加してください（参照整合性のチェック）。
+        #
+        # 例: payments に order_id=999 が紛れ込んでいたら、
+        #     orders に 999 が無いのでテストが失敗します。
+        columns:
+          - name: order_id
+            tests: []
+
+models:
+  - name: fct_revenue
+    columns:
+      - name: order_id
+        tests:
+          - unique
+          - not_null
+      - name: total_amount
+        tests:
+          - not_null
+

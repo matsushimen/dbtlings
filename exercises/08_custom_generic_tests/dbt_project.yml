@@ -1,10 +1,11 @@
-name: 'dbtlings_01'
+name: 'dbtlings_08'
 version: '1.0.0'
 config-version: 2
 
 profile: 'dbtlings'
 
 model-paths: ["models"]
+macro-paths: ["macros"]
 seed-paths: ["data"]
 test-paths: ["tests"]
 target-path: "target"
@@ -13,5 +14,5 @@ clean-targets:
   - "dbt_packages"
 
 models:
-  dbtlings_01:
+  dbtlings_08:
     materialized: view

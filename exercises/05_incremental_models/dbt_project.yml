@@ -1,4 +1,4 @@
-name: 'dbtlings_01'
+name: 'dbtlings_05'
 version: '1.0.0'
 config-version: 2
 
@@ -13,5 +13,5 @@ clean-targets:
   - "dbt_packages"
 
 models:
-  dbtlings_01:
+  dbtlings_05:
     materialized: view
